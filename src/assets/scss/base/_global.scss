@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: $bg;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+textarea,
+input {
+  border: none;
+  outline: none;
+}
+
+select {
+  outline: none;
+  cursor: pointer;
+}
