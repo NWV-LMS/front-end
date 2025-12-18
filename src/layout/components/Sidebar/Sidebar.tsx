@@ -3,10 +3,12 @@ import { HiUsers } from "react-icons/hi2";
 import { FiLogIn } from "react-icons/fi";
 import Logo from "../../../assets/icons/logo.svg";
 import SidebarItem from "./SidebarItem";
+import ToggleSidebar from "../../ui/ToggleSidebar";
 
 export default function Sidebar() {
   return (
     <aside className="sidebar">
+      <ToggleSidebar />
       <div className="sidebar_top">
         <img className="sidbar_logo" src={Logo} alt="logo" />
 
