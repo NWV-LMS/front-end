@@ -1,10 +1,8 @@
-import Layout from "./layout";
+import Routing from "./layout/RouterProvider/Routing";
 
 function App() {
   return (
-    <>
-      <Layout />
-    </>
+      <Routing />
   );
 }
 

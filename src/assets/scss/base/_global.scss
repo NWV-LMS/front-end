@@ -6,6 +6,7 @@
 
 body {
   background: $bg;
+  padding: 24px;
 }
 
 ul,
@@ -32,4 +33,19 @@ input {
 select {
   outline: none;
   cursor: pointer;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.container {
+  max-width: 100%;
+  width: 100%;
+  padding: 0px 30px;
+  margin: 0 auto;
+}
+
+.outlet {
+  width: 100%;
 }
