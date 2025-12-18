@@ -39,13 +39,8 @@ select {
   display: flex;
 }
 
-.container {
-  max-width: 100%;
-  width: 100%;
-  padding: 0px 30px;
-  margin: 0 auto;
-}
-
 .outlet {
   width: 100%;
+  max-width: 100%;
+  padding: 0px 30px;
 }
