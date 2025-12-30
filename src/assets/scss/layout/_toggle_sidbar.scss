@@ -11,4 +11,16 @@
   font-size: 20px;
   color: #0a1629;
   box-shadow: inset 6px 0 10px rgba(196, 203, 214, 0.08);
+  cursor: pointer;
+
+  .toggle_icon {
+    transition: transform 0.35s ease;
+    transform: rotate(180deg); // начальное положение (sidebar открыт)
+  }
+
+  &.open {
+    .toggle_icon {
+      transform: rotate(0deg);
+    }
+  }
 }

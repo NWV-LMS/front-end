@@ -4,10 +4,13 @@ import { FiLogIn } from "react-icons/fi";
 import Logo from "../../../assets/icons/logo.svg";
 import SidebarItem from "./SidebarItem";
 import ToggleSidebar from "../../ui/ToggleSidebar";
+import { useToggleStore } from "../../store/toggleStore";
 
 export default function Sidebar() {
+  const { isOpen } = useToggleStore();
+
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? "isactive" : ""}`}>
       <ToggleSidebar />
       <div className="sidebar_top">
         <img className="sidbar_logo" src={Logo} alt="logo" />
