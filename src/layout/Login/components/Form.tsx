@@ -1,3 +1,4 @@
+import { useState, createElement } from "react";
 import { useForm } from "react-hook-form";
 import type { LoginFormData } from "../types/login.types";
 import { login } from "../services/login.api";
@@ -9,15 +10,34 @@ import { passwordValidation } from "../validators/password";
 import { HiArrowRightEndOnRectangle } from "react-icons/hi2";
 import { IoCheckmarkOutline } from "react-icons/io5";
 import { LuEye } from "react-icons/lu";
+import { LuEyeOff } from "react-icons/lu";
 
 export default function Form() {
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm<LoginFormData>({
     mode: "onChange",
   });
+
+  const [formattedPhone, setFormattedPhone] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    let digits = e.target.value.replace(/\D/g, "");
+    if (digits.length > 9) digits = digits.slice(0, 9);
+
+    const formatted = digits.match(/.{1,3}/g)?.join(" ") || "";
+    setFormattedPhone(formatted);
+
+    setValue("phone", digits, { shouldValidate: true });
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prev) => !prev);
+  };
 
   const onSubmitForm = async (data: LoginFormData) => {
     try {
@@ -44,11 +64,12 @@ export default function Form() {
             <label>Phone Number</label>
             <input
               type="tel"
-              placeholder="505004411"
+              placeholder="505 004 411"
+              value={formattedPhone}
               {...register("phone", phoneValidation)}
+              onChange={handlePhoneChange}
             />
             <p className="form_input_code left_content">+996</p>
-
             <span className="form_err_text">{errors.phone?.message}</span>
           </div>
 
@@ -57,11 +78,14 @@ export default function Form() {
           >
             <label>Password</label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Enter your password"
               {...register("password", passwordValidation)}
             />
-            <LuEye className="form_input_eye right_content" />
+            {createElement(showPassword ? LuEyeOff : LuEye, {
+              className: "form_input_eye right_content",
+              onClick: togglePasswordVisibility,
+            })}
 
             <span className="form_err_text">{errors.password?.message}</span>
           </div>

@@ -5,9 +5,13 @@ import Logo from "../../../assets/icons/logo.svg";
 import SidebarItem from "./SidebarItem";
 import ToggleSidebar from "../../ui/ToggleSidebar";
 import { useToggleStore } from "../../store/toggleStore";
+import { useAuthStore } from "../../../store/auth.store";
 
 export default function Sidebar() {
   const { isOpen } = useToggleStore();
+  const logout = () => {
+    useAuthStore.getState().logout();
+  };
 
   return (
     <aside className={`sidebar ${isOpen ? "isactive" : ""}`}>
@@ -24,7 +28,7 @@ export default function Sidebar() {
         </nav>
       </div>
 
-      <button className="sidebar_logout">
+      <button onClick={logout} className="sidebar_logout">
         <FiLogIn className="sidebar_logout_icon" /> Logout
       </button>
     </aside>

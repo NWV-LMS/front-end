@@ -10,12 +10,8 @@ export const phoneValidation: RegisterOptions<LoginFormData, "phone"> = {
     value: 9,
     message: "Minimum 9 characters",
   },
-  maxLength: {
-    value: 9,
-    message: "Maximum 9 characters",
-  },
   pattern: {
-    value: /^[0-9]*$/,
+    value: /^[0-9 ]*$/,
     message: "You can only enter numbers",
   },
 };
