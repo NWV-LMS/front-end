@@ -1,14 +1,32 @@
+import type { RouteObject } from "react-router";
+import { ProtectedRoute } from "../guards/ProtectedRoute";
+import { PublicRoute } from "../guards/PublicRoute";
+import Login from "../layout/Login/Login";
 import Layout from "../layout";
 import Dashboard from "../modules/Dashboard";
 import Users from "../modules/Users";
 
-export const routes = [
+export const routes: RouteObject[] = [
   {
-    path: "/",
-    element: <Layout />,
+    element: <PublicRoute />,
     children: [
-      { index: true, element: <Dashboard /> },
-      { path: "users", element: <Users /> },
+      {
+        path: "/login",
+        element: <Login />,
+      },
+    ],
+  },
+  {
+    element: <ProtectedRoute />,
+    children: [
+      {
+        path: "/",
+        element: <Layout />,
+        children: [
+          { index: true, element: <Dashboard /> },
+          { path: "users", element: <Users /> },
+        ],
+      },
     ],
   },
 ];

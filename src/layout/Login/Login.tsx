@@ -1,6 +1,6 @@
 import Logo from "../../assets/icons/logo_white.svg";
 import Foto from "../../assets/images/login_foto.png";
-import Form from "./Form";
+import Form from "./components/Form";
 
 export default function Login() {
   return (

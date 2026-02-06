@@ -1,10 +1,8 @@
-import Login from "./layout/Login/Login";
-// import Routing from "./layout/RouterProvider/Routing";
+import Routing from "./layout/RouterProvider/Routing";
 
 function App() {
   return (
-      // <Routing />
-      <Login />
+    <Routing />
   );
 }
 
