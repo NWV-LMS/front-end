@@ -1,0 +1,9 @@
+@import "./components/components";
+
+.my_profile_solid {
+  @include solid();
+}
+
+.my_profile_wrapper {
+  margin-top: 26px;
+}

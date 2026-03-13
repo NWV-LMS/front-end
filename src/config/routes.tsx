@@ -5,6 +5,7 @@ import Login from "../layout/Login/Login";
 import Layout from "../layout";
 import Dashboard from "../modules/Dashboard";
 import Users from "../modules/Users";
+import MyProfile from "../modules/MyProfile";
 
 export const routes: RouteObject[] = [
   {
@@ -25,6 +26,7 @@ export const routes: RouteObject[] = [
         children: [
           { index: true, element: <Dashboard /> },
           { path: "users", element: <Users /> },
+          { path: "my-profile", element: <MyProfile /> },
         ],
       },
     ],

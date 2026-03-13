@@ -1,0 +1,124 @@
+.myprofile_info {
+  width: 462px;
+  height: 721px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  background: $white;
+  border: 1px solid $border-gray;
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+
+  .myprofile_info_head {
+    margin-top: 32px;
+    margin-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .myprofile_info_avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 4px solid $white;
+      box-shadow:
+        0 10px 6px -4px rgba(0, 0, 0, 0.1),
+        0 18px 15px -3px rgba(0, 0, 0, 0.1),
+        -2px 2px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .myprofile_info_name {
+      padding-top: 24px;
+      color: $text-black;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 32px;
+    }
+
+    .myprofile_info_role {
+      margin-top: 8px;
+      width: fit-content;
+      background: #f9f0ff;
+      color: #531dab;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+    }
+
+    .myprofile_info_date {
+      padding-top: 24px;
+      color: $steel;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+    }
+  }
+
+  .my_profile_details {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .my_profile_detail_article {
+      color: $text-gray;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-align: start;
+    }
+
+    .my_profile_detail_text {
+      color: $text-gray-dark;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: end;
+      position: relative;
+    }
+
+    .my_profile_detail_text.active_status::before,
+    .my_profile_detail_text.noactive_status::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .my_profile_detail_text.active_status::before {
+      background: $green-active;
+    }
+
+    .my_profile_detail_text.noactive_status::before {
+      background: $red-no-active;
+    }
+  }
+
+  .logout {
+    width: 100%;
+    padding: 7.5px 0;
+    border: 1px solid $red;
+    border-radius: 10px;
+    box-shadow: 0px 2px 0px 0px rgba(255, 38, 5, 0.06);
+    background: transparent;
+    color: $red;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 25.14px;
+    @include displayFlex();
+    gap: 10px;
+    margin-top: auto;
+  }
+}

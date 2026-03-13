@@ -29,7 +29,7 @@ export default function Form() {
     let digits = e.target.value.replace(/\D/g, "");
     if (digits.length > 9) digits = digits.slice(0, 9);
 
-    const formatted = digits.match(/.{1,3}/g)?.join(" ") || "";
+    const formatted = digits.match(/.{1,3}/g)?.join("") || "";
     setFormattedPhone(formatted);
 
     setValue("phone", digits, { shouldValidate: true });
@@ -45,8 +45,6 @@ export default function Form() {
       const { accessToken, refreshToken } = res.data;
 
       useAuthStore.getState().setTokens(accessToken, refreshToken);
-
-      console.log("Tokens saved");
     } catch (err) {
       console.error(err);
     }
@@ -64,7 +62,7 @@ export default function Form() {
             <label>Phone Number</label>
             <input
               type="tel"
-              placeholder="505 004 411"
+              placeholder="50500411"
               value={formattedPhone}
               {...register("phone", phoneValidation)}
               onChange={handlePhoneChange}
