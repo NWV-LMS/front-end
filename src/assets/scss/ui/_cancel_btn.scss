@@ -1,0 +1,17 @@
+.cancel_btn {
+  padding: 8px 18px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.02);
+  background: $border-gray;
+  color: $steel;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 25.14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  .icon {
+    font-size: 18px;
+  }
+}
