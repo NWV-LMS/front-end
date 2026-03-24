@@ -23,7 +23,7 @@ export default function Sidebar() {
           <p className="sidebar_text">Menu</p>
           <ul className="sidebar_list">
             <SidebarItem to="/" icon={TbCategoryFilled} label="Dashboard" />
-            <SidebarItem to="/users" icon={HiUsers} label="Users" />
+            <SidebarItem to="admins" icon={HiUsers} label="Administrators" />
           </ul>
         </nav>
       </div>

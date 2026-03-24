@@ -1,0 +1,11 @@
+.page_search_bg {
+  border: 1px solid rgba($white, 0.4);
+  border-radius: 16px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(72px);
+  background: rgba($white, 0.6);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}

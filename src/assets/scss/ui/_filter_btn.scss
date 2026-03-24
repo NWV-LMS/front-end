@@ -1,0 +1,13 @@
+.filter_btn {
+  height: 38px;
+  border: 1px solid $border-gray-inp;
+  border-radius: 8px;
+  background: $white;
+  color: rgba($black, 0.25);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 19px;
+  padding: 0 12px;
+  @include displayFlex;
+  gap: 8px;
+}

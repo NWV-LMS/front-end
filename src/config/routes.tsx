@@ -4,7 +4,8 @@ import { PublicRoute } from "../guards/PublicRoute";
 import Login from "../layout/Login/Login";
 import Layout from "../layout";
 import Dashboard from "../modules/Dashboard";
-import Users from "../modules/Users";
+import Admins from "../modules/Admins";
+import AdminsList from "../modules/Admins/Pages/AdminsList";
 import MyProfile from "../modules/MyProfile";
 
 export const routes: RouteObject[] = [
@@ -25,7 +26,11 @@ export const routes: RouteObject[] = [
         element: <Layout />,
         children: [
           { index: true, element: <Dashboard /> },
-          { path: "users", element: <Users /> },
+          {
+            path: "admins",
+            element: <Admins />,
+            children: [{ index: true, element: <AdminsList /> }],
+          },
           { path: "my-profile", element: <MyProfile /> },
         ],
       },
